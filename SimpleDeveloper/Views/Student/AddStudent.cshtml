@@ -1,0 +1,79 @@
+﻿@model SimpleDeveloperCore.Models.Student
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<h2 class="text-center">Add Student</h2>
+
+<form asp-action="AddStudent" method="post" enctype="multipart/form-data" class="form-container">
+    <div class="form-group">
+        <label class="form-label">Name <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Name" class="form-control form-input" placeholder="Enter student's name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Email <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Email" class="form-control form-input" placeholder="Enter student's email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input asp-for="PhoneNumber" class="form-control form-input" maxlength="10" placeholder="Enter phone number" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Age <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Age" class="form-control form-input" placeholder="Enter student's age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Class <i class="bi bi-asterisk required-asterisk"></i></label>
+        <select asp-for="Class" class="form-control form-input">
+            <option value="">Select a Class</option>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">4th</option>
+            <option value="5">5th</option>
+            <option value="6">6th</option>
+            <option value="7">7th</option>
+            <option value="8">8th</option>
+            <option value="9">9th</option>
+            <option value="10">10th</option>
+            <option value="11">11th</option>
+            <option value="12">12th</option>
+        </select>
+        <span asp-validation-for="Class" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Subjects <i class="bi bi-asterisk required-asterisk"></i></label>
+        <select asp-for="Subjects" class="form-select form-control" id="languages" data-placeholder="Select Subjects" multiple>
+            @if (Model.SubjectList != null && Model.SubjectList.Any())
+            {
+                @foreach (var subject in Model.SubjectList)
+                {
+                    <option value="@subject.Value">@subject.Text</option>
+                }
+            }
+        </select>
+        <span asp-validation-for="Subjects" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Roll Number <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="RollNumber" class="form-control form-input" placeholder="Enter roll number" />
+        <span asp-validation-for="RollNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Photo" class="form-label">Photo</label>
+        <input asp-for="Photo" class="form-control" type="file" id="photoInput" onchange="previewImage(event)" />
+    </div>
+    <div id="photoPreviewContainer" class="form-group mt-3 hidden">
+        <img id="photoPreview" src="#" alt="Photo Preview"/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

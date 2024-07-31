@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SimpleDeveloperCore.ViewModels.StudentSubjectsTeachersViewModel>
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Students, Subjects, and Teachers</h2>
+    
+    @foreach (var studentGroup in Model)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>@studentGroup.Student.Name</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Subject</th>
+                            <th>Teachers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var subjectGroup in studentGroup.SubjectsWithTeachers)
+                        {
+                            <tr>
+                                <td>@subjectGroup.Subject.Name</td>
+                                <td>
+                                    <ul class="list-unstyled mb-0">
+                                        @foreach (var teacher in subjectGroup.Teachers)
+                                        {
+                                            <li>@teacher.Name</li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>

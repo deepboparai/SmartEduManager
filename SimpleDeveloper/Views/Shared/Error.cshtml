@@ -1,0 +1,67 @@
+﻿@model SimpleDeveloper.Models.ErrorViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <style>
+        .error-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 600px;
+            padding: 20px;
+            margin: 50px auto; /* Center the container and add margin */
+            text-align: center; /* Center text inside container */
+            display:flow;
+        }
+
+            .error-container h1 {
+                color: #e74c3c;
+                font-size: 36px;
+            }
+
+            .error-container p {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+        .request-id {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .home-link {
+            display: block;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+            .home-link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+
+    <div class="error-container">
+        <h1>Oops! Something went wrong.</h1>
+        <p>@Model.Message</p>
+        @if (Model.ShowRequestId)
+        {
+            <div class="request-id">
+                Request ID: @Model.RequestId
+            </div>
+        }
+        <a href="@Url.Action("Index", "Home")" class="home-link">Return to Home Page</a>
+    </div>
+
+</html>

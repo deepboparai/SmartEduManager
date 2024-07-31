@@ -1,0 +1,61 @@
+﻿@model SimpleDeveloperCore.ViewModels.TeacherViewModel
+
+@{
+    ViewData["Title"] = "Add Teacher";
+}
+<h2 class="text-center">Add Teacher</h2>
+
+<form asp-action="AddTeacher" method="post" enctype="multipart/form-data" class="form-container">
+    <div class="form-group">
+        <label class="form-label">Name <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Name" class="form-control form-input" placeholder="Enter teacher's name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Email <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Email" class="form-control form-input" placeholder="Enter teacher's email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input asp-for="PhoneNumber" maxlength="10" class="form-control form-input" placeholder="Enter teacher's phone number" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Subjects <i class="bi bi-asterisk required-asterisk"></i></label>
+        <select asp-for="TeacherSubjects" class="form-select form-control" id="languages" data-placeholder="Select Subjects" multiple>
+            @foreach (var subject in Model.SubjectList)
+            {
+                <option value="@subject.Value">@subject.Text</option>
+            }
+        </select>
+        <span asp-validation-for="TeacherSubjects" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Age <i class="bi bi-asterisk required-asterisk"></i></label>
+        <input asp-for="Age" class="form-control form-input" placeholder="Enter teacher's age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Sex <i class="bi bi-asterisk required-asterisk"></i></label>
+        <select asp-for="Sex" class="form-control form-input">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <span asp-validation-for="Sex" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Photo" class="form-label">Photo</label>
+        <input asp-for="Photo" class="form-control" type="file" id="photoInput" onchange="previewImage(event)" />
+    </div>
+    <div id="photoPreviewContainer" class="form-group mt-3 hidden">
+        <img id="photoPreview" src="#" alt="Photo Preview" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary mt-3">Add Teacher</button>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

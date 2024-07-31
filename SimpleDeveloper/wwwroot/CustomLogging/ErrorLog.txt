@@ -1,0 +1,49 @@
+﻿{
+  "Timestamp": "2024-07-31T06:38:29.3562972Z",
+  "MethodName": "Index",
+  "LineNumber": 45,
+  "ExceptionMessage": "dadasdjahdasjgdjadjasdgjasd",
+  "ExceptionStackTrace": "   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 24"
+}
+{
+  "Timestamp": "2024-07-31T06:38:38.1440009Z",
+  "MethodName": "Index",
+  "LineNumber": 45,
+  "ExceptionMessage": "dadasdjahdasjgdjadjasdgjasd",
+  "ExceptionStackTrace": "   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 24"
+}
+{
+  "Timestamp": "2024-07-31T06:38:56.0612221Z",
+  "MethodName": "Index",
+  "LineNumber": 45,
+  "ExceptionMessage": "dadasdjahdasjgdjadjasdgjasd",
+  "ExceptionStackTrace": "   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 24"
+}
+{
+  "Timestamp": "2024-07-31T06:46:27.5701303Z",
+  "MethodName": "Index",
+  "LineNumber": 45,
+  "ExceptionMessage": "dadasdjahdasjgdjadjasdgjasd",
+  "ExceptionStackTrace": "   at SimpleDeveloper.Controllers.HomeController.Index(String searchString)"
+}
+{
+  "Timestamp": "2024-07-31T13:00:16.1880831+05:30",
+  "MethodName": "Index",
+  "LineNumber": 44,
+  "ExceptionMessage": "Data is Null. This method or property cannot be called on Null values.",
+  "ExceptionStackTrace": "   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()\r\n   at Microsoft.Data.SqlClient.SqlBuffer.get_String()\r\n   at Microsoft.Data.SqlClient.SqlDataReader.GetString(Int32 i)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.GroupBySingleQueryingEnumerable\u00602.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at SimpleDeveloperData.Repository.StudentRepository.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperData\\Repository\\StudentRepository.cs:line 81\r\n   at SimpleDeveloperServices.Services.StudentService.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperServices\\Services\\StudentService.cs:line 52\r\n   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 32"
+}
+{
+  "Timestamp": "2024-07-31T17:37:07.5538922+05:30",
+  "MethodName": "Index",
+  "LineNumber": 44,
+  "ExceptionMessage": "Invalid column name \u0027Subjects\u0027.",
+  "ExceptionStackTrace": "   at Microsoft.Data.SqlClient.SqlCommand.\u003C\u003Ec.\u003CExecuteDbDataReaderAsync\u003Eb__211_0(Task\u00601 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask\u00602.InnerInvoke()\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task\u0026 currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.GroupBySingleQueryingEnumerable\u00602.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func\u00604 operation, Func\u00604 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.GroupBySingleQueryingEnumerable\u00602.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at SimpleDeveloperData.Repository.StudentRepository.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperData\\Repository\\StudentRepository.cs:line 81\r\n   at SimpleDeveloperServices.Services.StudentService.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperServices\\Services\\StudentService.cs:line 52\r\n   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 32"
+}
+{
+  "Timestamp": "2024-07-31T17:50:52.9189352+05:30",
+  "MethodName": "Index",
+  "LineNumber": 44,
+  "ExceptionMessage": "Invalid column name \u0027Subjects\u0027.",
+  "ExceptionStackTrace": "   at Microsoft.Data.SqlClient.SqlCommand.\u003C\u003Ec.\u003CExecuteDbDataReaderAsync\u003Eb__211_0(Task\u00601 result)\r\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask\u00602.InnerInvoke()\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n--- End of stack trace from previous location ---\r\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\r\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task\u0026 currentTaskSlot, Thread threadPoolThread)\r\n--- End of stack trace from previous location ---\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.GroupBySingleQueryingEnumerable\u00602.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func\u00604 operation, Func\u00604 verifySucceeded, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.Query.Internal.GroupBySingleQueryingEnumerable\u00602.AsyncEnumerator.MoveNextAsync()\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable\u00601 source, CancellationToken cancellationToken)\r\n   at SimpleDeveloperData.Repository.StudentRepository.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperData\\Repository\\StudentRepository.cs:line 81\r\n   at SimpleDeveloperServices.Services.StudentService.GetStudentsGroupedByClassAsync() in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloperServices\\Services\\StudentService.cs:line 52\r\n   at SimpleDeveloper.Controllers.HomeController.Index(String searchString) in D:\\Simple\\SimpleDeveloperTest\\SimpleDeveloper\\Controllers\\HomeController.cs:line 32"
+}
