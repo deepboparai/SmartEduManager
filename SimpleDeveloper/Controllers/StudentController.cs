@@ -110,13 +110,9 @@ namespace SimpleDeveloper.Controllers
                 {
                     if (photo != null && photo.Length > 0)
                     {
-                        var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads", photo.FileName);
-
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await photo.CopyToAsync(stream);
-                        }
-                        model.Photo = photo.FileName;
+                        // save
+                        var path = await FileService.SaveFileAsync(photo, "uploads");
+                        model.Photo = path.Split("/")[1];
                     }
                     else
                     {
@@ -143,8 +139,8 @@ namespace SimpleDeveloper.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while creating the student.");
-               
-                
+
+
                 var errorViewModel = new ErrorViewModel
                 {
                     RequestId = HttpContext.TraceIdentifier,

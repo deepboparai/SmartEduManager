@@ -36,10 +36,8 @@ namespace SimpleDeveloperData.Repository
         }
         public async Task<IEnumerable<IGrouping<string, Student>>> GetStudentsGroupedByClassListAsync()
         {
-            if (_schoolContext.Students == null)
-            {
+            if (!_schoolContext.Students.Any())
                 return new List<IGrouping<string, Student>>();
-            }
 
             var studentsGroupedByClass = await _schoolContext.Students
                                                               .GroupBy(s => s.Class).AsNoTracking()
