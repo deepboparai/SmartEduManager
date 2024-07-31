@@ -97,7 +97,8 @@ namespace SimpleDeveloperData.Repository
                 await _schoolContext.Students.AddAsync(addStudent);
                 await _schoolContext.SaveChangesAsync();
                 // Split the subjects, parse them into integers, and create a list of StudentSubjectReference
-                var studentSubjectReferences = addStudent.Subjects
+                var studentSubjects = string.Join(",", addStudent.Subjects);
+                var studentSubjectReferences = studentSubjects
                     .Split(',')
                     .Select(int.Parse)
                     .Select(subjectId => new StudentSubjectReference
