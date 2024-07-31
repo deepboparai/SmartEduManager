@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,7 @@ namespace SimpleDeveloperCore.Models
         [Required(ErrorMessage = "Sex is required")]
         public string Sex { get; set; }
         public string Photo { get; set; }
+        [NotMapped]
         public string SubjectId { get; set; } 
         public bool Active { get; set; }
         public ICollection<SubjectTeacherReference> SubjectTeacherReferences { get; set; } = new List<SubjectTeacherReference>();

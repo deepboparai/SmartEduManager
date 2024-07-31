@@ -33,7 +33,7 @@ namespace SimpleDeveloperCore.Models
         public string Class { get; set; }
         [NotMapped]
         [Required(ErrorMessage = "Subject is required")]
-        public string? Subjects { get; set; }
+        public List<string>? Subjects { get; set; } = new List<string>();
 
         [Required(ErrorMessage = "Roll number is required")]
         [Range(0, 99999, ErrorMessage = "Roll number cannot exceed 10 digits")]
