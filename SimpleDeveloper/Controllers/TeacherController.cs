@@ -76,7 +76,7 @@ namespace SimpleDeveloper.Controllers
                     {
                         Name = model.Name,
                         Email = model.Email,
-                        Photo = uniqueFileName.Split("/")[1],
+                        Photo = uniqueFileName?.Split("/")[1],
                         Age = model.Age,
                         Sex = model.Sex,
                         PhoneNumber = model.PhoneNumber,
