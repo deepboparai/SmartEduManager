@@ -5,6 +5,7 @@ using SimpleDeveloper.Models;
 using SimpleDeveloperCore.IServices;
 using SimpleDeveloperCore.Models;
 using SimpleDeveloperCore.ViewModels;
+using SimpleDeveloperServices.Services;
 
 namespace SimpleDeveloper.Controllers
 {
@@ -68,20 +69,14 @@ namespace SimpleDeveloper.Controllers
 
                     if (model.Photo != null)
                     {
-                        string uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
-                        uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
-                        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await model.Photo.CopyToAsync(fileStream);
-                        }
+                        uniqueFileName = await FileService.SaveFileAsync(model.Photo, "uploads");
                     }
 
                     Teacher teacher = new Teacher
                     {
                         Name = model.Name,
                         Email = model.Email,
-                        Photo = uniqueFileName,
+                        Photo = uniqueFileName?.Split("/")[1],
                         Age = model.Age,
                         Sex = model.Sex,
                         PhoneNumber = model.PhoneNumber,
@@ -91,7 +86,7 @@ namespace SimpleDeveloper.Controllers
 
                     await _teacherService.AddTeachertAsync(teacher);
                     return RedirectToAction("Index", "Home");
-                }               
+                }
 
                 // If model state is not valid, reload subjects list
                 var subjects = await _teacherService.GetSubjectListAsync();
